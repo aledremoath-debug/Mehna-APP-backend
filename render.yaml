@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: mehna-backend
+    env: php
+    buildCommand: composer install --no-dev --optimize-autoloader
+    startCommand: php artisan serve --host=0.0.0.0 --port=10000
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: MAIL_MAILER
+        value: smtp
+      - key: MAIL_HOST
+        value: smtp.gmail.com
+      - key: MAIL_PORT
+        value: 465
+      - key: MAIL_USERNAME
+        value: mokmel136@gmail.com
+      - key: MAIL_PASSWORD
+        value: qnujzzmxinpzhoax
+      - key: MAIL_ENCRYPTION
+        value: ssl
+      - key: GEMINI_API_KEY
+        value: AIzaSyDqcDb1z2GFP1XnWcLC1wVLYxYhAUgwXsQ
